@@ -1,0 +1,10 @@
+[submodule "eclmap"]
+	path = eclmap
+	url = https://github.com/Priw8/eclmap.git
+	branch = master
+[submodule "content/MERLIN"]
+	path = content/MERLIN
+	url = https://github.com/Priw8/MERLIN
+[submodule "eclplus"]
+	path = eclplus
+	url = https://github.com/priw8/eclplus

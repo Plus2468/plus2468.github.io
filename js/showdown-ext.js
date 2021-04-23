@@ -367,7 +367,6 @@ let ext = function() {
 		replace: "<span style='color:#888888'>$1?</span>"
 	}
 
-
 	let no = {
 		type: "lang",
 		regex: /\[no\]([^]*?)\[\/no\]/g,
@@ -383,19 +382,19 @@ let ext = function() {
 	let what = {
 		type: "lang",
 		regex: /\[what\]/g,
-		replace: "Effect"
+		replace: "What happens"
 	}
 
 	let how = {
 		type: "lang",
 		regex: /\[how\]/g,
-		replace: "Description"
+		replace: "How it happens"
 	}
 
 	let why = {
 		type: "lang",
 		regex: /\[why\]/g,
-		replace: "Cause"
+		replace: "Why it happens"
 	}
 
 	let why_idk = {
@@ -408,6 +407,12 @@ let ext = function() {
 		type: "lang",
 		regex: /\[links\]/g,
 		replace: "Links"
+	}
+
+	let patches = {
+		type: "lang",
+		regex: /\[patches\]/g,
+		replace: "Patches"
 	}
 
 	let rpy = {
@@ -451,6 +456,48 @@ let ext = function() {
 		regex: /\[bugUnderflow\]/g,
 		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
 	}
+	
+	let bugTypo = {
+		type: "lang",
+		regex: /\[bugTypo\]/g,
+		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
+	}
 
-	return [anmSelect, eclmap, yt, hr, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, et, anm, yes, unknown, no, specs, what, how, why, why_idk, links, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow];
+	let bugDesync = {
+		type: "lang",
+		regex: /\[bugDesync\]/g,
+		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
+	}
+
+	let bugDoubleMenu = {
+		type: "lang",
+		regex: /\[bugDoubleMenu\]/g,
+		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
+	}
+
+	let bugSpritesheet = {
+		type: "lang",
+		regex: /\[bugSpritesheet\]/g,
+		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
+	}
+
+	let bugYoumuCharge = {
+		type: "lang",
+		regex: /\[bugYoumuCharge\]/g,
+		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
+	}
+
+	let bugSlowdown = {
+		type: "lang",
+		regex: /\[bugSlowdown\]/g,
+		replace: "<a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>VD</span>"
+	}	
+
+	let bugUninitialisedVariable = {
+		type: "lang",
+		regex: /\[bugUninitialisedVariable\]/g,
+		replace: "<span style='color: "+colors[125]+"'>DS</span>, <a href='#b=bugs/ddc_bugs/&p=1'><span style='color: "+colors[14]+"'>DDC</span></a>, <span style='color: "+colors[165]+"'>UM</span>"
+	}	
+
+	return [anmSelect, eclmap, yt, hr, br, ts, img, img_small, ins, ins_notip,  variable, variable_notip, code, title, c, include, game, rawGame, html, script, tip, /*video,*/ flex, flex2, et, anm, yes, unknown, no, specs, what, how, why, why_idk, links, patches, rpy, vid, misc, a, sub, repeatDuplicate, bugUnderflow, bugTypo, bugDesync, bugDoubleMenu, bugSpritesheet, bugYoumuCharge, bugSlowdown, bugUninitialisedVariable];
 }

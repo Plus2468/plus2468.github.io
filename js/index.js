@@ -98,7 +98,7 @@ const INDEX =
 		"noItem": "true",
 		"path": "bugs/ddc_bugs/",
 		"type": "blog",
-		"url": 4, // max page number
+		"url": 7, // max page number
 		"max": 1,
 		"reverse": true
 	},
@@ -135,12 +135,12 @@ const INDEX =
 		"groupName": "Bugs",
 		"path": "bugs/",
 		"content": [
-			{
+			/*{
 				"name": "Overview",
 				"type": "site",
 				"url": "credits"
-			},
-			{
+			},*/
+			/*{
 				"name": "PC-98 games",
 				"type": "subgroup",
 				"children": [
@@ -171,7 +171,7 @@ const INDEX =
 						"url": "https://github.com/Priw8/eclmap"
 					}
 				]
-			},
+			},*/
 			{
 				"name": "Windows Main games",
 				"type": "subgroup",
@@ -270,27 +270,11 @@ const INDEX =
 					}
 				]
 			},
-
-
-
-
-			{
-				"name": "Other",
-				"type": "subgroup",
-				"children": [
-					{
-						"name": "ExpHP's site",
-						"type": "href",
-						"url": "https://exphp.github.io/thpages/"
-					}
-				]
-			},
-
 		]
 	},
 
 
-	{
+	/*{
 		"groupName": "Patches",
 		"path": "patches/",
 		"content": [
@@ -370,9 +354,9 @@ const INDEX =
 				]
 			},
 		]
-	},
+	},/*
 
-	{
+	/*{
 		"groupName": "Guides",
 		"path": null,
 		"content": [
@@ -406,7 +390,7 @@ const INDEX =
 				"url": "https://maribelhearn.com/"
 			}
 		]
-	},
+	},*/
 
 	{
 		"groupName": "Links",

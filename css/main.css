@@ -78,8 +78,10 @@ instr {
 	font-family: sans-serif;
 	margin-left: 30px;
 	font-weight: bold;
-}
+	color: white;
+	text-decoration: none;
 
+}
 .header-navigation {
 	border: 1px solid #0e0238;
 	/*border-bottom-left-radius: 15px;

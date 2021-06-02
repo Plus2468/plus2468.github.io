@@ -2,7 +2,7 @@ const INDEX =
 [
 	{
 		"groupName": "Home",
-		"name": "Plus's Github page",
+		"name": "Home",
 		"single": true,
 		"path": "/",
 		"type": "site",
@@ -98,7 +98,7 @@ const INDEX =
 		"noItem": "true",
 		"path": "bugs/ddc_bugs/",
 		"type": "blog",
-		"url": 7, // max page number
+		"url": 78, // max page number
 		"max": 1,
 		"reverse": true
 	},
@@ -130,146 +130,321 @@ const INDEX =
 		"reverse": true
 	},
 
+	{
+		"noItem": "true",
+		"path": "bugs/um_bugs/",
+		"type": "blog",
+		"url": 9, // max page number
+		"max": 1,
+		"reverse": true
+	},
+
 
 	{
 		"groupName": "Bugs",
 		"path": "bugs/",
 		"content": [
-			/*{
-				"name": "Overview",
-				"type": "site",
-				"url": "credits"
-			},*/
-			/*{
-				"name": "PC-98 games",
-				"type": "subgroup",
-				"children": [
-					{
-						"name": "HRtP",
-						"type": "href",
-						"url": "#b=ecl-tutorial/&p=1"
-					},
-					{
-						"name": "SoEW",
-						"type": "site",
-						"url": "ins"
-					},
-					{
-						"name": "PoDD",
-						"type": "site",
-						"url": "vars"
-					},
-					{
-						"name": "LLS",
-						"type": "site",
-						"url": "flags"
-					},
-					{
-						"name": "MS",
-						"type": "href",
-						"newTab": true,
-						"url": "https://github.com/Priw8/eclmap"
-					}
-				]
-			},*/
-			{
-				"name": "Windows Main games",
-				"type": "subgroup",
-				"children": [
-					{
-						"name": "EoSD",
-						"type": "site",
-						"url": "eosd"
-					},
-					{
-						"name": "PCB",
-						"type": "site",
-						"url": "pcb"
-					},
-					{
-						"name": "IN",
-						"type": "site",
-						"url": "in"
-					},
-					{
-						"name": "PoFV",
-						"type": "site",
-						"url": "pofv"
-					},
-					{
-						"name": "MoF",
-						"type": "site",
-						"url": "mof"
-					},
-					{
-						"name": "SA",
-						"type": "site",
-						"url": "sa"
-					},
-					{
-						"name": "UFO",
-						"type": "site",
-						"url": "ufo"
-					},
-					{
-						"name": "TD",
-						"type": "site",
-						"url": "td"
-					},
-					{
-						"name": "DDC",
-						"type": "site",
-						"url": "ddc"
-					},
-					{
-						"name": "LoLK",
-						"type": "site",
-						"url": "lolk"
-					},
-					{
-						"name": "HSiFS",
-						"type": "site",
-						"url": "hsifs"
-					},
-					{
-						"name": "WBaWC",
-						"type": "site",
-						"url": "wbawc"
-					}
-				]
-			},
 
+		{
+			"name": "東方紅魔郷 ～ the Embodiment of Scarlet Devil",
+			"type": "subgroup",
+			"color": "#FF0000",
+			"children": [
+				{
+					"name": "Frame Perfect Attack Skip",
+					"type": "bugsite",
+					"url": "#b=bugs/eosd_bugs/&p=1"
+				},
+				{
+					"name": "null",
+					"type": "bugsite",
+					"url": "#b=bugs/eosd_bugs/&p=2"
+				}
+			]
+		},
+		{
+			"name": "東方妖々夢 ～ Perfect Cherry Blossom",
+			"type": "subgroup",
+			"color": "#FF8ED2",
+			"children": [
+				{
+					"name": "PCB lmao",
+					"type": "bugsite",
+					"url": "#b=bugs/eosd_bugs/&p=1"
+				}
+			]
+			},
 			{
-				"name": "Other games",
+			"name": "東方永夜抄 ～ Imperishable Night",
+			"type": "subgroup",
+			"color": "#333399",
+			"children": [
+				{
+					"name": "IN lmao",
+					"type": "bugsite",
+					"url": "#b=bugs/eosd_bugs/&p=1"
+				}
+			]
+			},
+			{
+			"name": "東方花映塚 ～ Phantasmagoria of Flower View",
+			"type": "subgroup",
+			"color": "#058060",
+			"children": [
+				{
+				"name": "pofv lmao",
+				"type": "bugsite",
+				"url": "#b=bugs/eosd_bugs/&p=1"
+			}
+			]
+			},
+			{
+				"name": "東方文花帖 ～ Shoot the Bullet",
 				"type": "subgroup",
+				"color": "#009973",
 				"children": [
 					{
-						"name": "StB",
-						"type": "site",
-						"url": "/MERLIN/doc/index"
-					},
+					"name": "stb lmao",
+					"type": "bugsite",
+					"url": "#b=bugs/eosd_bugs/&p=1"
+				}
+			]
+			},
+			{
+				"name": "東方風神録 ～ Mountain of Faith",
+				"type": "subgroup",
+				"color": "#96B300",
+				"children": [
 					{
-						"name": "DS",
-						"type": "site",
-						"url": "/MERLIN/doc/index"
-					},
-					{
-						"name": "FW",
-						"type": "site",
-						"url": "/MERLIN/doc/index"
-					},
-					{
-						"name": "ISC",
-						"type": "site",
-						"url": "/MERLIN/doc/index"
-					},
-					{
-						"name": "VD",
-						"type": "site",
-						"url": "/MERLIN/doc/index"
+						"name": "mof lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
 					}
+
 				]
 			},
+			{
+				"name": "東方地霊殿 ～ Subterranean Animism",
+				"type": "subgroup",
+				"color": "#591400",
+				"children": [
+					{
+						"name": "as lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方星蓮船 ～ Undefined Fantastic Object",
+				"type": "subgroup",
+				"color": "#4169E1",
+				"children": [
+					{
+						"name": "fuo lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方文花帖 ～ Double Spoiler",
+				"type": "subgroup",
+				"color": "#7D3884",
+				"children": [
+					{
+						"name": "double score",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方三月精 ～ Fairy Wars",
+				"type": "subgroup",
+				"color": "#00C8C8",
+				"children": [
+					{
+						"name": "Ifw lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方神霊廟 ～ Ten Desires",
+				"type": "subgroup",
+				"color": "#4A808C",
+				"children": [
+					{
+						"name": "10d lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方輝針城 ～ Double Dealing Character",
+				"type": "subgroup",
+				"color": "#AA7777",
+				"children": [
+					{
+						"name": "Underflow",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=1"
+					},
+					{
+						"name": "Underflow",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=2"
+					},
+					{
+						"name": "Underflow",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=3"
+					},
+					{
+						"name": "Underflow",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=4"
+					},
+					{
+						"name": "Underflow",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=5"
+					},
+					{
+						"name": "Underflow",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=6"
+					},
+
+
+				]
+			},
+			{
+				"name": "弾幕アマノジャク ～ Impossible Spell Card",
+				"type": "subgroup",
+				"color": "#B6423C",
+				"children": [
+					{
+						"name": "isc lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方紺珠伝 ～ Legacy of Lunatic Kingdom",
+				"type": "subgroup",
+				"color": "#6A47BE",
+				"children": [
+					{
+						"name": "lol,k  lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方天空璋 ～ Hidden Star in Four Seasons",
+				"type": "subgroup",
+				"color": "#176E0E",
+				"children": [
+					{
+						"name": "hsi4s lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "秘封ナイトメアダイアリー 〜 Violet Detector",
+				"type": "subgroup",
+				"color": "#AE11D5",
+				"children": [
+					{
+						"name": "violent disease lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方鬼形獣 ～ Wily Beast and Weakest Creature",
+				"type": "subgroup",
+				"color": "#190E0E",
+				"children": [
+					{
+						"name": "wbawc lmao",
+						"type": "bugsite",
+						"url": "#b=bugs/eosd_bugs/&p=1"
+					}
+
+				]
+			},
+			{
+				"name": "東方虹龍洞 ～ Unconnected Marketeers",
+				"type": "subgroup",
+				"color": "#1DD294",
+				"children": [
+					{
+						"name": "東方虹龍洞 ～ Unconnected Marketeers",
+						"type": "nolink",
+						"color": "#1DD294",
+					},
+					{
+						"name": "GAME_SPEED & Duplicate Effects",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=1"
+					},
+					{
+						"name": "Chimata Final Timeout Crash",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=2"
+					},
+					{
+						"name": "D press Desync during stage transition",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=3"
+					},
+					{
+						"name": "Takane Card 40 Gold Cost",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=4"
+					},
+					{
+						"name": "Practice mode 0 bombs",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=5"
+					},
+					{
+						"name": "GAME_SPEED & Duplicate Effects",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=6"
+					},
+					{
+						"name": "GAME_SPEED & Duplicate Effects",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=7"
+					},
+					{
+						"name": "GAME_SPEED & Duplicate Effects",
+						"type": "bugsite",
+						"url": "#b=bugs/um_bugs/&p=8"
+					},
+
+				]
+			}
 		]
 	},
 
@@ -446,5 +621,3 @@ const EMBED_LOAD_ERROR = `
 Failed to load embedded content.  
 HTTP status code: %code%
 `;
-
-

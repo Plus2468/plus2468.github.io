@@ -41,14 +41,15 @@ function getNavigation(data) {
 
 function getNavigationEntry(data) {
 	let html;
-	html = "<div class='navigation-entry' data-path='"+data.path+"'>";
+	html = "<div class='navigation-entry'  data-path='"+data.path+"'>";
 	if (!data.single) {
-		html += "<div class='navigation-entry-name'>"+data.groupName+"</div>";
-		html += "<div class='navigation-entry-list'>";
+		html += "<div class='navigation-entry-name' onclick='openNav"+data.groupName+"()'>"+data.groupName+"</div>";
+		html += "<div class='navigation-entry-list' style='width: 0px;' id='sideNavBar"+data.groupName+"'>"; //side navbar
+		html += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>"; //close button
 		html += getNavigationEntryList(data)
 		html += "</div>";
 	} else {
-		html += "<a " + getNavEntryHref(data, data.path) + " ><div class='navigation-entry-name' "+getNavEntryDatasetString(data, data.path)+">"+data.groupName+"</div></a>";
+		html += "<a " + getNavEntryHref(data, data.path) + " ><div class='navigation-entry-name' "+getNavEntryDatasetString(data, data.path)+">"+data.name+"</div></a>";
 	};
 	html += "</div>";
 	return html;
@@ -59,15 +60,31 @@ function getNavigationEntryList(data) {
 	for (let i=0; i<data.content.length; i++) {
 		let item = data.content[i];
 		if (item.type == "subgroup") {
-			html += "<div class='navigation-entry-list-item subgroup-parent'><div>" + getNavigationEntryList({
+			html += "<div class='navigation-entry-list-item subgroup-parent' onclick='openNavGames("+whiteSpaceRemove(item.name)+")'>";
+			html += "<span>" + item.name + "</span></div>";
+			html += "<div class='color-rectangle' style='background-color:"+item.color+";'></div>";
+			html += "<div id='"+whiteSpaceRemove(item.name)+"' class='navigation-entry-list' style='width: 0px;'>" + getNavigationEntryList({
 				path: data.path,
 				content: item.children
-			}) + "</div><span>" + item.name + "</span></div>";
+			}) + "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a></div>";
 		} else {
-			html += "<a " + getNavEntryHref(item, data.path) + " ><div class='navigation-entry-list-item' "+getNavEntryDatasetString(item, data.path) + ">"+item.name+"</div></a>";
+			html += "<a " + getNavEntryHref(item, data.path) + " ><div class='"+getNavTopName(item)+" navigation-entry-list-item' "+getNavEntryDatasetString(item, data.path) + ">"+item.name+"</div><div class='color-rectangle' style='background-color:"+item.color+";'></div></a>";
 		}
 	}
 	return html;
+}
+
+function whiteSpaceRemove(data) {
+	dataNew = data.replace(/ /g, "").replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/-/g, '').replace(/[^\x00-\x7F]/g, ""); //removes space , quotation marks", quotation marks', parantheses(), and hyphen-, non-unicode like jp/emojis
+	
+	return dataNew;
+}
+
+function getNavTopName(item) {
+	if (item.type == "nolink") {
+		return "top-text";
+	} else return;
+
 }
 
 function getNavEntryDatasetString(item, path) {
@@ -76,11 +93,13 @@ function getNavEntryDatasetString(item, path) {
 
 function getNavEntryHref(item, path) {
 	return `href='${
-		item.type == "href"
-			? item.url
-			: item.type == "blog"
-				? "#b=" + path + "&p=1"
-				: "#s=" + path + item.url
+		item.type == "href" //if
+			? item.url //then
+			: item.type == "blog" //if
+				? "#b=" + path + "&p=1" //then
+				: item.type == "bugsite" //if
+					? "#b=" + path + item.url //then
+					: "#s=" + path + item.url //else
 	}'`;
 }
 
@@ -107,6 +126,8 @@ function navigate(data) {
 		}
 	} else if (data.type == "site") {
 		loadContent(path, url);
+	} else if (data.type == "bugsite") {
+		window.location.replace(url);
 	} else if (data.type == "blog") {
 		let group = getGroupByPath(path);
 		loadBlog(path, url, 1, group.max, group.reverse);
@@ -493,6 +514,44 @@ function initEmbeds() {
 		}
 	});
 }
+
+function openNavBugs() {
+	document.getElementById("sideNavBarBugs").style.width = "100%";
+}
+
+function openNavLinks() {
+	document.getElementById("sideNavBarLinks").style.width = "200px";
+}
+
+var names = ['sideNavBarBugs', 'sideNavBarLinks', 'theEmbodimentofScarletDevil', 'PerfectCherryBlossom', 'ImperishableNight', 'PhantasmagoriaofFlowerView', 'ShoottheBullet', 'MountainofFaith', 'SubterraneanAnimism', 'UndefinedFantasticObject', 'DoubleSpoiler', 'FairyWars', 'TenDesires', 'DoubleDealingCharacter', 'ImpossibleSpellCard', 'LegacyofLunaticKingdom', 'HiddenStarinFourSeasons', 'VioletDetector', 'WilyBeastandWeakestCreature', 'UnconnectedMarketeers'];
+
+function closeNav() {
+	for(var i = 0; i < names.length; ++i) {
+		document.getElementById(names[i]).style.width = "0px";
+	}
+}
+
+window.addEventListener('mouseup', function(event) {
+	for(var i = 0; i < names.length; ++i) {
+		var pol = document.getElementById(names[i]);
+		if (event.target != pol && event.target.parentNode != pol) {
+			pol.style.width = '0px';
+		}
+	}
+	// for after dinner: try using some for loop + an array - edit wow i can actually do js !
+})
+
+function openNavGames(idk) {
+	var number = names.indexOf(idk.id, 2); //if PerfectCherryBlossom return 1 (index of PCB) + 2 (i think idk man)
+	var name = document.getElementById(names[number]);
+		if (name.style.width === "0px") {	
+			name.style.width = "100%";
+		} else {
+			name.style.width = "0px";
+		}
+}
+
+
 
 function init() {
 	initNavigation();

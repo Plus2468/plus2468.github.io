@@ -294,35 +294,55 @@ const INDEX =
 				"color": "#AA7777",
 				"children": [
 					{
+						"name": "東方輝針城 ～ Double Dealing Character",
+						"type": "nolink",
+						"color": "#AA7777",
+					},
+					{
 						"name": "Underflow",
 						"type": "bugsite",
 						"url": "#b=bugs/ddc_bugs/&p=1"
 					},
 					{
-						"name": "Underflow",
+						"name": "Bulletless Kagerou",
 						"type": "bugsite",
 						"url": "#b=bugs/ddc_bugs/&p=2"
 					},
 					{
-						"name": "Underflow",
+						"name": "Marisa's Lasers",
 						"type": "bugsite",
 						"url": "#b=bugs/ddc_bugs/&p=3"
 					},
 					{
-						"name": "Underflow",
+						"name": "Barrier Bug",
 						"type": "bugsite",
 						"url": "#b=bugs/ddc_bugs/&p=4"
 					},
 					{
-						"name": "Underflow",
+						"name": "Gohei Duplication",
 						"type": "bugsite",
 						"url": "#b=bugs/ddc_bugs/&p=5"
 					},
 					{
-						"name": "Underflow",
+						"name": "Benben Spell 2 Crash",
 						"type": "bugsite",
 						"url": "#b=bugs/ddc_bugs/&p=6"
 					},
+					{
+						"name": "Screen-flipping Effect Undo",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=7"
+					},
+					{
+						"name": "GAME_SPEED & Duplicate Effects",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=8"
+					},
+					{
+						"name": "null",
+						"type": "bugsite",
+						"url": "#b=bugs/ddc_bugs/&p=9"
+					}
 
 
 				]
@@ -346,9 +366,24 @@ const INDEX =
 				"color": "#6A47BE",
 				"children": [
 					{
-						"name": "lol,k  lmao",
+						"name": "東方紺珠伝 ～ Legacy of Lunatic Kingdom",
+						"type": "nolink",
+						"color": "#6A47BE",
+					},
+					{
+						"name": "Sagume Skip",
 						"type": "bugsite",
-						"url": "#b=bugs/eosd_bugs/&p=1"
+						"url": "#b=bugs/lolk_bugs/&p=1"
+					},
+					{
+						"name": "Red Background",
+						"type": "bugsite",
+						"url": "#b=bugs/lolk_bugs/&p=2"
+					},
+					{
+						"name": "Doremy's First Non-spell Typo",
+						"type": "bugsite",
+						"url": "#b=bugs/lolk_bugs/&p=3"
 					}
 
 				]
@@ -428,7 +463,7 @@ const INDEX =
 						"url": "#b=bugs/um_bugs/&p=5"
 					},
 					{
-						"name": "GAME_SPEED & Duplicate Effects",
+						"name": "Centipede + Wolf not stacking",
 						"type": "bugsite",
 						"url": "#b=bugs/um_bugs/&p=6"
 					},

@@ -93,7 +93,8 @@ let ext = function() {
 		15: "#6a47be",
 		16: "#176e0e",
 		165: "#ae11d5",
-		17: "#190e0e"
+		17: "#190e0e",
+		18: "#1dd294"
 	}
 
 	let game = {
@@ -445,6 +446,8 @@ let ext = function() {
 		replace: "<sub>$1</sub>"
 	}
 
+
+	
 	let repeatDuplicate = {
 		type: "lang",
 		regex: /\[repeatDuplicate\]/g,

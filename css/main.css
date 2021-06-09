@@ -1,3 +1,5 @@
+
+
 body {
 	/*background: #1c2b20;*/
 	background-color: #05111d;
@@ -9,27 +11,24 @@ body {
 	line-height: 130%;
 }
 
-/* width */
+
+/*
 ::-webkit-scrollbar {
 	width: 5px;
 }
   
-/* Track */
 ::-webkit-scrollbar-track {
 box-shadow: inset 0 0 3px grey; 
 }
-   
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
 	background: rgb(82, 82, 82); 
 	border-radius: 1px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #7e7e7e; 
-}
-
+}*/
 
 
 a {

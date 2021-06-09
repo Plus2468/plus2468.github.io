@@ -75,7 +75,7 @@ function getNavigationEntryList(data) {
 }
 
 function whiteSpaceRemove(data) {
-	dataNew = data.replace(/ /g, "").replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/-/g, '').replace(/[^\x00-\x7F]/g, ""); //removes space , quotation marks", quotation marks', parantheses(), and hyphen-, non-unicode like jp/emojis
+	let dataNew = data.replace(/ /g, "").replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/-/g, '').replace(/[^\x00-\x7F]/g, ""); //removes space , quotation marks", quotation marks', parantheses(), and hyphen-, non-unicode like jp/emojis
 	
 	return dataNew;
 }
@@ -542,8 +542,8 @@ window.addEventListener('mouseup', function(event) {
 })
 
 function openNavGames(idk) {
-	var number = names.indexOf(idk.id, 2); //if PerfectCherryBlossom return 1 (index of PCB) + 2 (i think idk man)
-	var name = document.getElementById(names[number]);
+	var i = names.indexOf(idk.id, 2); //if PerfectCherryBlossom return 1 (index of PCB) + 2 (i think idk man)
+	var name = document.getElementById(names[i]);
 		if (name.style.width === "0px") {	
 			name.style.width = "100%";
 		} else {
@@ -551,9 +551,71 @@ function openNavGames(idk) {
 		}
 }
 
+function getGameFromURL() {
+	let url = window.location.hash; // #b=bugs/ddc_bugs/&p=1
+	let gameName;
+	if (url.slice(0, 8) == "#b=bugs/") { // prevents page from not loading stuff if it is not true
+		gameName = /\#b\=bugs\/(.*?)\_bugs\//i.exec(url)[1]; // ddc
+	}
+	return gameName;
+}
 
+function initScrollBar() {
+    // Create the <style>
+    var style = document.createElement("style");
+    var css = "::-webkit-scrollbar {width: 5px;}  ::-webkit-scrollbar-track {box-shadow: inset 0 0 3px grey; }::-webkit-scrollbar-thumb {background: " + colorHex(); +"";
+	css += "; border-radius: 1px;}::-webkit-scrollbar-thumb:hover {background: " +colorRGB();+ "";
+	css += "; }";
+
+    // WebKit hack :(
+    style.appendChild(document.createTextNode(css));
+
+    // Add the <style> element to the page
+    document.body.appendChild(style);
+    return style.sheet;
+}
+
+function colorHex() {
+	let games = ['hrtp', 'soew', 'podd', 'lls', 'ms', 'eosd', 'pcb', 'in', 'pofv', 'stb', 'mof', 'sa', 'ufo', 'ds', 'fw', 'ts', 'ddc', 'isc', 'lolk', 'hsifs', 'vd', 'wbawc', 'um'];
+	let colors = ['#888888', '#888888', '#888888', '#888888', '#888888', '#FF0000', '#FF8ED2', '#333399', '#058060', '#009973', '#96B300', '#591400', '#4169E1', '#7D3884', '#00C8C8', '#4A808C', '#AA7777', '#B6423C', '#6A47BE', '#176E0E', '#AE11D5', '#190E0E', '#1DD294'];
+	let gameName = getGameFromURL(); // ddc
+	let posGames = games.indexOf(gameName); // 16
+	let scrollBarColor;
+	if (posGames == "-1") {
+		scrollBarColor = "#888888";
+	} else {
+		scrollBarColor = colors[posGames]; // #AA7777
+	}
+	
+	return scrollBarColor;
+}
+
+function colorRGB() {
+	const add = 32;
+	let colourHex = colorHex();
+	let rHex = "0x" + colourHex.substring(1, 3); // 0xAB
+	let gHex = "0x" + colourHex.substring(3, 5); // 0xCD
+	let bHex = "0x" + colourHex.substring(5, 7); // 0xEF
+
+	let rDec = parseInt(rHex) + add;
+	let gDec = parseInt(gHex) + add;
+	let bDec = parseInt(bHex) + add;
+
+	if (rDec > 255) {rDec = 255;}
+	if (gDec > 255) {gDec = 255;}
+	if (bDec > 255) {bDec = 255;}
+
+	let output = "rgba("+rDec+", "+gDec+ ", "+bDec+", 1.0)"
+	//console.log(output);
+	return output;
+}
+
+
+  
+window.addEventListener('hashchange', initScrollBar, false); // if page is reloaded then execute initScrollBar
 
 function init() {
+	initScrollBar();
 	initNavigation();
 	initContent();
 	initResize();
@@ -563,5 +625,7 @@ function init() {
 		useBR: true
 	});
 }
+
+
 
 init();
